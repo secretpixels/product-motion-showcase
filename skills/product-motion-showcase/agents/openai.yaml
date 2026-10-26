@@ -1,0 +1,4 @@
+interface:
+  display_name: "Product Motion Showcase"
+  short_description: "Looping motion videos for apps, websites and brands"
+  default_prompt: "Use $product-motion-showcase to make a looping motion video of my app."
