@@ -16,7 +16,11 @@ Formats: 9:16 (Reels), 16:9 (YouTube, brand reel), 1:1 and 4:3.
 ## What it gives your AI assistant
 
 - Questions, asked one at a time, so it starts with the right brief.
+- Two feels: my subtle one and a fast, kinetic one (kinetic text, quick cuts, assembling a mosaic).
+- A cheap, script-free storyboard in HTML with a ratio control (16:9, 9:16, 1:1, 4:3, 4:5), shown before anything is built.
 - How I bring static screens to life with subtle interface motion.
+- A shadow that follows the background, with ready-made layers for the frames.
+- Presentation scenes for supplied assets: a component grid, a responsive morph, a wall reveal, a device with a grid around it and a gallery.
 - My three portfolio frames (app with one or two devices, web with one device), with exact sizes.
 - A list of required material: at least 3 brand colours, a logo, typography and a few screens or recordings.
 - How my usual interface video is built: a brand moment, one realistic flow and a seamless loop.
@@ -31,7 +35,7 @@ Formats: 9:16 (Reels), 16:9 (YouTube, brand reel), 1:1 and 4:3.
 
 ## Install
 
-It is one skill folder in the open Agent Skills format. Install it as a folder in Claude Code or Codex, and upload it in the Claude app and in ChatGPT where Skills are available. Availability and exact steps vary by product and workspace. Step by step: see [INSTALL.md](INSTALL.md). The ready-made ZIP is on the Releases page.
+It is one skill folder in the open Agent Skills format. Install it as a folder in Claude Code or Codex, and upload it in the Claude app and in ChatGPT where Skills are available. Availability and exact steps vary by product and workspace. Step by step: see [INSTALL.md](INSTALL.md). The ready-made ZIP is on the Releases page, under Assets. For the Claude app, use that ZIP and not Code > Download ZIP.
 
 ## Requirements
 
@@ -50,16 +54,23 @@ skills/product-motion-showcase/
   SKILL.md
   agents/openai.yaml
   assets/frames/
+  assets/storyboard-template.html
   references/
     video-types.md
     interface-flow-video.md
     frames.md
     ui-motion.md
+    text-animation.md
+    presentation-scenes.md
+    fast-style.md
+    storyboard.md
     example-white-label-piece.md
     workflow.md
     timing-and-easing.md
     camera-tokens-and-3d.md
     sound-and-music.md
+    build-in-code.md
+    pitfalls.md
     prompts-and-feedback.md
 ```
 

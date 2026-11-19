@@ -37,6 +37,10 @@ A white circle with a soft shadow where the finger lands. On a website I have us
 - A little blur on spinning 3D objects, on top of the motion blur.
 - Static screens get subtle UI motion (`ui-motion.md`). Recordings stay as they are.
 
+## Text
+
+Text never sits next to, above or below a device. It gets its own scene between the screens. See `text-animation.md`.
+
 ## Unisex
 
 Apps are unisex: no status bar, notch, Dynamic Island, home indicator or navigation bar. Websites have no browser around them: no tabs, address bar, toolbars or scrollbars. See `frames.md`.

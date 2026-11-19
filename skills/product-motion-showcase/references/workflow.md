@@ -41,13 +41,17 @@ Format and length come from the video type (see `video-types.md`), or from an ex
 
 Every round follows the same loop:
 
-1. A quick draft render at half resolution.
+1. A cheap draft: half resolution, a range of frames or a few stills.
 2. A contact sheet per section.
 3. A strip of frames around every transition.
 4. Fix what is off.
-5. Final render.
+5. After a yes, the final render.
 6. Master the audio.
 7. Run the final checks.
+
+Strips around transitions are frame by frame (every frame for about one second), not a few samples: small jolts only show up that way. Compare a crop of the moving object, not just the whole frame.
+
+Before showing a version, put the real app, logo or product next to the render and check that every detail is there.
 
 Versions go up in numbers (v2, v3 and so on). Keep the previous one, so I can compare.
 
@@ -62,7 +66,7 @@ This applies to the browser-based route (for example Remotion with Chrome). A br
 
 ## Poster frame (thumbnail)
 
-Frame 0 of the exported video is a poster: one still frame that shows up as the thumbnail when the video is shared in WhatsApp, on Dribbble or on LinkedIn. It should be the best shot of the video. In my own videos it often shows the brand screen next to the hero screen.
+Frame 0 of the exported video is a poster: one still frame that shows up as the thumbnail when the video is shared in WhatsApp, on Dribbble or on LinkedIn. It should be the best shot of the video. In my own videos it often shows the brand screen next to the hero screen. For a promo or a brand reel the poster is a mosaic of panels (see `presentation-scenes.md`), never a block of text with a grid of logos.
 
 1. Find still moments: moments where nothing on screen moves. Use the timeline (every velocity is zero) or measure the difference between consecutive frames. A frame in the middle of a movement is blurred by the motion blur and looks unsharp as a thumbnail.
 2. Render the snapshot from a still moment, at full resolution, without motion blur.
@@ -74,9 +78,10 @@ Frame 0 of the exported video is a poster: one still frame that shows up as the 
 ## Final checks
 
 - Duration is exact.
-- Loudness is on target, if there is music.
-- Frame 0 is the poster, and the loop is seamless: the last frame equals frame 1.
-- No dropped frames.
+- Loudness is on target, if there is music: about -14 LUFS, true peak at -1 dB or lower.
+- Frame 0 is the poster, and the loop is seamless: the last frame equals frame 1 (compare them; above 40 dB PSNR is identical apart from compression).
+- No dropped frames: no frame is much darker than both its neighbours.
+- At every transition, a frame-by-frame strip shows no jumps, doubled edges or flickering shadows.
 
 ## Export to After Effects
 

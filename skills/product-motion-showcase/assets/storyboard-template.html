@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<style>
+:root{--paper:#f4f1ea;--ink:#1f1f1f;--muted:#6d6d6d;--dark:#424242;--panel:#292c33;--blue:#4f6bff;--purple:#9b59b6;--green:#2fbf73;--orange:#ff8a3d;--red:#e0553a;--ratio:16/9;--min:420px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif}
+.r{position:absolute;opacity:0;pointer-events:none}
+header{max-width:1500px;margin:0 auto;padding:36px 32px 8px;display:flex;flex-wrap:wrap;gap:16px 32px;align-items:flex-end;justify-content:space-between}
+h1{margin:0 0 4px;font-size:36px;line-height:1.1}
+.meta{margin:0;color:var(--muted)}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg label{padding:9px 15px;border:2px solid var(--ink);border-radius:999px;font-weight:600;font-size:15px;cursor:pointer}
+#r169:checked~header [for=r169],#r916:checked~header [for=r916],#r11:checked~header [for=r11],#r43:checked~header [for=r43],#r45:checked~header [for=r45]{background:var(--ink);color:var(--paper)}
+#r169:focus-visible~header [for=r169],#r916:focus-visible~header [for=r916],#r11:focus-visible~header [for=r11],#r43:focus-visible~header [for=r43],#r45:focus-visible~header [for=r45]{outline:3px solid var(--blue);outline-offset:2px}
+#r169:checked~main{--ratio:16/9;--min:420px}
+#r916:checked~main{--ratio:9/16;--min:300px}
+#r11:checked~main{--ratio:1/1;--min:300px}
+#r43:checked~main{--ratio:4/3;--min:380px}
+#r45:checked~main{--ratio:4/5;--min:300px}
+main{max-width:1500px;margin:0 auto;padding:24px 32px 48px;display:grid;gap:40px 32px;grid-template-columns:repeat(auto-fill,minmax(var(--min),1fr))}
+.card h2{margin:0;font-size:21px}
+.when{margin:2px 0 10px;color:var(--muted);font-size:14px}
+.cap{margin:10px 0 0;font-size:15px}
+.frame{position:relative;aspect-ratio:var(--ratio);background:var(--dark);border:3px solid var(--ink);border-radius:10px;overflow:hidden;container-type:size;--u:min(1cqh,.5625cqw)}
+.device{position:absolute;left:50%;top:50%;height:82%;aspect-ratio:486/984;background:#fff;border-radius:10%/4.9%;overflow:hidden;transform:translate(calc(-50% + var(--dx,0cqh)),calc(-50% + var(--dy,0cqh)));box-shadow:0 2cqh 3cqh rgba(0,0,0,.35)}
+.device .hd{height:19%;background:var(--c,var(--blue))}
+.device .cards{display:flex;flex-direction:column;gap:2.6cqh;padding:3.2cqh 2.8cqh}
+.device .cards i{display:block;height:8.6cqh;border-radius:1.2cqh;background:#e2e4f0}
+.device.dark{background:#262242}.device.dark .hd{--c:var(--purple)}.device.dark .cards i{background:#463f6e}
+.d1{--dx:-23.6cqh;--dy:-2.3cqh}.d2{--dx:23.6cqh;--dy:2.3cqh}
+.two::after{display:none}
+#r916:checked~main .two .device,#r45:checked~main .two .device{display:none}
+#r916:checked~main .two .frame::after,#r45:checked~main .two .frame::after{content:"No two-device frame in this ratio. Use one device.";display:grid;place-items:center;text-align:center;position:absolute;inset:0;padding:0 12%;color:#d2d2d2;font:600 calc(5*var(--u))/1.3 sans-serif}
+.web{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(86cqw,114.5cqh);aspect-ratio:1380/880;background:#fff;border-radius:1.6cqh;overflow:hidden;box-shadow:0 2cqh 3cqh rgba(0,0,0,.35)}
+.web .bar{height:9%;background:#ebebeb}
+.web .body{display:grid;grid-template-columns:1.1fr 1fr;gap:4cqh;padding:5cqh}
+.web .img{height:34cqh;border-radius:1.4cqh;background:#d7e6ff}
+.web .t{display:grid;gap:2.6cqh;align-content:start}.web .t i{display:block;height:3.4cqh;border-radius:1cqh;background:#cfcfcf}
+.txt{display:flex;flex-direction:column;justify-content:center;padding:0 9%}
+.big{margin:0;color:#fff;font:700 calc(9*var(--u))/1.18 sans-serif}
+.sub{margin:calc(4*var(--u)) 0 0;color:#cfcfcf;font:400 calc(6*var(--u))/1.2 sans-serif}
+.cf{background:#15161a;display:grid;place-items:center}
+.cells{display:grid;grid-template-columns:repeat(5,1fr);gap:calc(2.2*var(--u));width:84%}
+.cells i{position:relative;aspect-ratio:1.5;background:#f0f0f0;border-radius:calc(1.4*var(--u));display:grid;place-items:center;color:#777;font:600 calc(3*var(--u))/1 sans-serif;font-style:normal}
+.pn{background:#14161a}
+.pan{position:absolute;top:3.7cqh;bottom:3.7cqh;background:var(--panel);border-radius:2.4cqh;display:flex;align-items:center;justify-content:center;gap:2.4cqh}
+.d{display:block;height:70%;aspect-ratio:486/984;border-radius:10%/4.9%;background:#000;box-shadow:0 1.4cqh 2cqh rgba(0,0,0,.35)}
+.d.w{background:#fff}.d.p{background:#3a3470}
+.pan .d{height:min(64cqh,60cqw)}
+.mo{background:#14161a;display:grid;grid-template-columns:1.5fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:3.7cqh;padding:3.7cqh}
+.mo .p{background:var(--panel);border-radius:2.4cqh;display:flex;align-items:center;justify-content:center;gap:2cqh;overflow:hidden}
+.mo .p .d{height:68%}
+.mo .t{grid-row:1/3;padding:0 6%;justify-content:flex-start}
+.mo .t b{color:#c7d2ff;font:700 calc(9*var(--u))/1.1 sans-serif}
+#r916:checked~main .mo,#r11:checked~main .mo,#r45:checked~main .mo{grid-template-columns:1fr 1fr;grid-template-rows:1.1fr 1fr 1fr}
+#r916:checked~main .mo .t,#r11:checked~main .mo .t,#r45:checked~main .mo .t{grid-row:1;grid-column:1/3}
+.end{background:#1e1e1e}
+.mark{position:absolute;left:50%;top:42%;width:calc(30*var(--u));height:calc(30*var(--u));transform:translate(-50%,-50%);border-radius:50%;background:#fff;display:grid;place-items:center;color:#222;font:700 calc(6*var(--u))/1 sans-serif}
+.name{position:absolute;left:0;right:0;top:72%;text-align:center;color:#fff;font:700 calc(8*var(--u))/1 sans-serif}
+.music{grid-column:1/-1;background:#fbfaf6;border:3px solid var(--ink);border-radius:10px;padding:22px 26px}
+.music h2{margin:0;font-size:21px}
+.track{display:grid;grid-template-columns:repeat(var(--bars,15),1fr);gap:3px;margin-top:12px}
+.track div{padding:12px 6px;border-radius:8px;background:var(--c,var(--blue));color:#fff;text-align:center;font-weight:700;font-size:14px}
+.note{margin:10px 0 0;color:#333;font-size:15px}
+</style>
+</head>
+<body>
+<input class="r" type="radio" name="ratio" id="r169" checked>
+<input class="r" type="radio" name="ratio" id="r916">
+<input class="r" type="radio" name="ratio" id="r11">
+<input class="r" type="radio" name="ratio" id="r43">
+<input class="r" type="radio" name="ratio" id="r45">
+
+<header>
+  <div>
+    <h1>{{TITLE}}</h1>
+    <p class="meta">Storyboard sketch. {{META}}</p>
+  </div>
+  <div class="seg" role="group" aria-label="Aspect ratio">
+    <label for="r169">16:9</label>
+    <label for="r916">9:16</label>
+    <label for="r11">1:1</label>
+    <label for="r43">4:3</label>
+    <label for="r45">4:5</label>
+  </div>
+</header>
+
+<main>
+<!-- SCENES -->
+</main>
+</body>
+</html>

@@ -18,11 +18,11 @@ Do not play animations one after another. When a move is nearly done, about 70 p
 
 The moves overlap in time but not in view: they flow into each other, they do not collide.
 
-When the same move repeats over several items, each one starting a little after the last, that is a *stagger*. My stagger: each next item starts when the previous one is about halfway, so they come in half after each other. Use it for grids, lists and rings of objects, and use overlap for the main story beats.
+When the same move repeats over several items, each one starting a little after the last, that is a *stagger*. My stagger: each next item starts when the previous one is about halfway, so they come in half after each other. Use it for grids, lists and rings of objects, and use overlap for the main story beats. Text is different: its stagger is only about a frame per word (see `text-animation.md`).
 
 ## Speeding up screen recordings
 
-Screen recordings are sped up with a slow, fast, slow curve. You see more in the same time, and the important moments (a picker that closes, a panel that opens) land exactly on the beat. Recordings keep running through the scene instead of restarting.
+Screen recordings are sped up with a slow, fast, slow curve, about 1.5 to 2 times at the fastest point. Keep it subtle: ease in and ease out, and remap the time with a smooth speed curve, so the speed never jumps and nothing stutters. You see more in the same time, and the important moments (a picker that closes, a panel that opens) land exactly on the beat. Recordings keep running through the scene instead of restarting.
 
 ## Easing: my 80/80 rule
 
@@ -58,4 +58,5 @@ Motion blur is on for everything that moves. It makes the movement look smoother
 - In After Effects: switch motion blur on for every moving layer and for the composition. Start with a shutter angle of 180 degrees and adjust by eye.
 - In Remotion: use its motion blur component, so the moving layers get extra sub-frames and the blur matches.
 - Spinning 3D objects and fast carousels get it too.
+- Use enough samples. Ghost copies or a stepped trail at a fast move mean too few samples. Raise the samples and check the fastest frame.
 - A frame taken in the middle of a movement is blurred, so it is never used as a thumbnail. See the poster frame in `workflow.md`.

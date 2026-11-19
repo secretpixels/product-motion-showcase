@@ -32,7 +32,7 @@ Optional: a third-party installer, `npx skills add secretpixels/product-motion-s
 ## Claude app (claude.ai and desktop)
 
 1. Make sure code execution and file creation are on (Settings > Capabilities on Free, Pro and Max). On Team and Enterprise plans an owner must enable Skills under Organization settings > Skills. Anthropic states that skills need code execution to work.
-2. Download `product-motion-showcase.zip` from the latest Release. The ZIP has the folder `product-motion-showcase/` at its top level, with `SKILL.md` inside that folder, which is what the app expects. Do not unzip and re-zip the files from inside the folder.
+2. Download `product-motion-showcase.zip` from the latest Release (under Assets). Do not use Code > Download ZIP or the Source code files: those contain the whole repository, and the app then reports that `SKILL.md` must be in the top-level folder. The ZIP has the folder `product-motion-showcase/` at its top level, with `SKILL.md` inside that folder, which is what the app expects. Do not unzip and re-zip the files from inside the folder.
 3. Go to Customize > Skills, click `+`, then Create skill, then Upload a skill, and choose the ZIP.
 4. Turn the skill on in the list.
 5. Use it in a new conversation: describe the task, or type `/` and pick the skill.

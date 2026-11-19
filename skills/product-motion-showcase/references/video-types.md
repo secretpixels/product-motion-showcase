@@ -52,8 +52,10 @@ When a project has no tokens and one brand, skip blocks 3 and 4 and put the weig
 1. A statement, typed or revealed word by word.
 2. The brand or product reveal, with its logo animation.
 3. The explanation in parts, one part per scene. For a brand identity: voice, typography, colour, motion, icons, photography, illustration and layouts. For a product: the problem, how it works and the answer.
-4. The brand applied: layouts, mockups, a phone in a hand, a screen on a wall.
+4. The brand applied: layouts, mockups, a phone in a hand, a screen on a wall. When the user supplies assets (pieces of a UI, images, icons), present them as a component grid, a gallery, a device with a grid around it, or, when both layouts exist, a web page that morphs into its mobile layout. See `presentation-scenes.md`.
 5. A finale: the logo animates or morphs, then an end card.
+
+**Fast option.** For an energetic reel (kinetic text, short scenes, cuts on the beat), or a promo of a service or a person with one keyword per scene, use the fast style in `fast-style.md`. Ask which feel the user wants.
 
 **Rhythm.** Calm scenes with long holds first, then cuts that accelerate towards a climax (in one of my reels the gap between cuts shrinks from about 0.9 seconds to 0.1 seconds). Or no hard cuts at all: one stream of morphs where each element turns into the next. Scenes overlap, so the next one starts while the last one is still leaving.
 
